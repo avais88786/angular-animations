@@ -1,0 +1,38 @@
+<h2>Animation using height manipulation:</h2>
+<div [@openClose]="isOpen ? 'open' : 'closed'" class="open-close-container" (click)="toggle()">
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+  <button>Button 1</button><br/>
+  <button>Button 2</button>
+</div>
+
+<hr/>
+<h2>ng ifs:</h2>
+
+<label (click)="toggleBelow()">Click Me (horizontal)</label>
+<div  style="background-color: bisque" *ngIf="showSecondBlock" [@openCloseWithVoid]>
+  <p>The box is now {{ isOpen ? 'Open' : 'Closed' }}!</p>
+</div>
+
+<label (click)="toggleBelow2()">Click Me (vertical)</label>
+<div  style="background-color: bisque" *ngIf="showThirdBlock" [@openCloseWithVoidVertical]>
+  The box is now {{ isOpen ? 'Open' : 'Closed' }}!
+  <button>Button 1</button><br/>
+  <button>Button 2</button>
+</div>
+
+<hr/>
+
+<accordion [showArrows]="true" [closeOthers]="false" [expandAll]="true">
+  <accordion-group heading="Accordion heading">
+      <accordion-heading>
+          Or <b>custom</b> <accordion-toggle>heading with clickable zone.</accordion-toggle>
+      </accordion-heading>
+      <div>
+        The box is now 1
+      </div>
+      <div>
+        The box is now 2
+      </div>
+  </accordion-group>
+  ...
+</accordion>
